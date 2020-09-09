@@ -1,0 +1,5 @@
+#!/bin/bash
+# SSH copy to sshlog.txt
+tail -500 /var/log/auth.log | grep --line-buffered 'sshd' | tee sshlog.txt
+#python script to send sshlog.txt
+python Maillog.py
